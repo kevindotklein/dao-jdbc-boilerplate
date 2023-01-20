@@ -57,14 +57,7 @@ public class DepartmentDaoJDBC implements DepartmentDao{
             rs = st.executeQuery();
             
             if(rs.next()){
-          
-                Map<Integer, Department> map = new HashMap<>();
-                Department dep = map.get(rs.getInt("Id"));
-
-                if(dep == null){
-                    dep = instantiateDepartment(rs);
-                    map.put(rs.getInt("Id"), dep);
-                }
+                Department dep = instantiateDepartment(rs);
                 return dep;
             }
             return null;
