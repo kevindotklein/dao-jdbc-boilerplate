@@ -24,7 +24,10 @@ public class Program2 {
         list = departmentDao.findAll();
         System.out.println(list);
 
-        
+        System.out.println("=== TEST 3: department insert ===");
+        Department dep = new Department(null, "Music");
+        departmentDao.insert(dep);
+        System.out.println("inserted! new id = "+dep.getId());
 
     }   
 }
